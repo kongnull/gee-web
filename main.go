@@ -8,11 +8,8 @@ import (
 
 func main() {
 	r := gee.New()
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		_, err := fmt.Fprintf(w, "URL.Path=%q\n", r.URL.Path)
-		if err != nil {
-			return
-		}
+	r.Get("/", func(c http.ResponseWriter, r *http.Request) {
+
 	})
 
 	r.Get("/hello", func(w http.ResponseWriter, r *http.Request) {
@@ -26,6 +23,6 @@ func main() {
 
 	err := r.Run(":9200")
 	if err != nil {
-		return 
+		return
 	}
 }
