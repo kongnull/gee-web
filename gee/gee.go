@@ -18,11 +18,11 @@ func (engine *Engine) addRoute(method string, patter string, handler HandlerFunc
 	engine.router.addRoute(method, patter, handler)
 }
 
-func (engine *Engine) Get(pattern string, handler HandlerFunc) {
+func (engine *Engine) GET(pattern string, handler HandlerFunc) {
 	engine.router.addRoute("GET", pattern, handler)
 }
 
-func (engine *Engine) Post(patter string, handler HandlerFunc) {
+func (engine *Engine) POST(patter string, handler HandlerFunc) {
 	engine.addRoute("POST", patter, handler)
 }
 
